@@ -6,7 +6,7 @@
 
 ## Results for Autograd fit: 
 
-    For 100 iterations: 
+1. For 100 iterations: 
         
     | Intercept Present | Learning function | Batch Size | RMSE  | MAE   |
     |-------------------|-------------------|------------|-------|-------|

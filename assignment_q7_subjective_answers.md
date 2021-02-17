@@ -1,6 +1,6 @@
 # ES654-2020 Assignment 3
 
-*Your Name* - *Your Roll Number*
+*Kalyan* - *18110079*
 
 ------
 
@@ -14,4 +14,4 @@
 
 3. Surface plot:
 
-    !['Gif for Contour plot'](surface.png)
+    !['Gif for Contour plot'](Surface.png)

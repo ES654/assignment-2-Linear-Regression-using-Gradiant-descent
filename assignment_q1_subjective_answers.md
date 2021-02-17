@@ -6,7 +6,7 @@
 
 ## Results for Non-vectorized fit:
 
-    For 100 iterations: 
+1. For 100 iterations, N=30, F=5: 
         
     | Intercept Present | Learning function | Batch Size | RMSE  | MAE   |
     |-------------------|-------------------|------------|-------|-------|

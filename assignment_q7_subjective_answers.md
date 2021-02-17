@@ -14,4 +14,4 @@
 
 3. Surface plot:
 
-    !['Gif for Contour plot'](Surface.png)
+    !['Gif for Contour plot'](Surface.gif)

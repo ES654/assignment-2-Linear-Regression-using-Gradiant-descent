@@ -6,7 +6,7 @@
 
 ## Results for Vectorized fit: 
 
-    > For 100 iterations
+1. For 100 iterations, N=30,f=5 :
         
     | Intercept Present | Learning function | Batch Size | RMSE  | MAE   |
     |-------------------|-------------------|------------|-------|-------|

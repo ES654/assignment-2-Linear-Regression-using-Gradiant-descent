@@ -4,5 +4,14 @@
 
 ------
 
-> Write the answers for the subjective questions here
+1. Line plot:
 
+    !['Gif for Line plot'](Line.gif)
+
+2. Contour plot:
+
+    !['Gif for Contour plot'](Contour.gif)
+
+3. Surface plot:
+
+    !['Gif for Contour plot'](surface.png)

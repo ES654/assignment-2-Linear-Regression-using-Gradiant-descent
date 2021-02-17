@@ -3,6 +3,8 @@ from numpy.core.fromnumeric import size
 import pandas as pd
 import matplotlib.pyplot as plt
 from autograd import grad
+from matplotlib.patches import Circle
+from mpl_toolkits.mplot3d import Axes3D, art3d
 # Import Autograd modules here
 
 #This is used to calculate rss value for all X and y values in the 2d space for a given theta.
@@ -43,7 +45,7 @@ class LinearRegression():
         if(batch_size>X.shape[0]):
             print("Batch size has exceded the size of X")
             quit()
-        self.coef_=np.zeros(X.shape[1]+1)
+        self.coef_=np.zeros(X.shape[1]+1)+4
         X_arr=np.ones((1,X.shape[0]))
         if(not self.fit_intercept):
             X_arr=np.zeros((1,X.shape[0]))
@@ -299,18 +301,20 @@ class LinearRegression():
         y_val=np.array(y)
         X_in=X_val
         y_in=y_val
-        x_sur,y_sur=np.meshgrid(np.linspace(self.coef_[0]-5,self.coef_[0]+5,10),np.linspace(self.coef_[1]-5,self.coef_[1]+5,10))
+        x_sur,y_sur=np.meshgrid(np.linspace(-4,4,50),np.linspace(-4,4,50))
         rss_z=np.vectorize(rss)
         z_sur=rss_z(x_sur,y_sur)
         fig=plt.figure()
         ax = fig.gca(projection='3d')
-        ax.plot_surface(x_sur, y_sur, z_sur,linewidth=0, antialiased=False)
-        ax.scatter3D(t_0,t_1,rss_z(t_0,t_1)+20,color='red')
+        ax.plot_surface(x_sur, y_sur, z_sur,linewidth=0, rstride=1,cstride=1)
+        p = Circle((t_0, t_1), 0.1,color='red')
+        ax.add_patch(p)
+        art3d.pathpatch_2d_to_3d(p, z=rss_z(t_0,t_1), zdir="z")
         ax.set_xlabel("Theta 0")
         ax.set_ylabel("Theta 1")
         ax.set_zlabel("RSS")
         plt.title("Surface Plot for RSS")
-        plt.show()
+        return plt
 
     def plot_line_fit(self, X, y, t_0, t_1):
         """

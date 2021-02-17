@@ -1,11 +1,8 @@
 ''' In this file, you will utilize two parameters degree and include_bias.
     Reference https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.PolynomialFeatures.html
 '''
-from typing import Iterator
 import numpy as np
-import pandas as pd
 import itertools
-import matplotlib.pyplot as plt
 
 class PolynomialFeatures():
     
@@ -17,8 +14,6 @@ class PolynomialFeatures():
         """
         self.degree=degree
         self.include_bias=include_bias
-        
-        pass
     
     def transform_1d(self,X_1):
         combinations=list(range(X_1.shape[0]))
@@ -46,6 +41,7 @@ class PolynomialFeatures():
         Outputs:
         returns (np.array) Tranformed dataset.
         """
+        X=np.array(X)
         if(X.ndim==1):
             return self.transform_1d(X)            
         elif(X.ndim==2):
